@@ -3,11 +3,13 @@ name: CI
 on:
   pull_request:
     types: [opened, reopened]
+    branches:    
+      - 'main'
   
 jobs:
   build:
     runs-on: ubuntu-latest
-    if: ${{ github.base_ref == 'main'}}
+    # if: ${{ github.base_ref == 'main'}}
     steps:
       - uses: actions/checkout@v3
       
